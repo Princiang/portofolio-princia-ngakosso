@@ -325,6 +325,21 @@ html[data-theme="light"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .chips span{border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:.8rem;color:var(--text);background:var(--panel-2)}
 
 /* ============================================================
+   7bis. CERTIFICATIONS
+   ============================================================ */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.cert{
+  border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 22px 22px;background:var(--panel);
+  transition:border-color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);
+  display:flex;flex-direction:column;gap:9px;
+}
+.cert:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+.cert-org{color:var(--emerald)}
+.cert h3{font-size:1.05rem;letter-spacing:-.02em;line-height:1.3;font-weight:700}
+.cert-date{color:var(--muted)}
+.cert .link-s{margin-top:8px;align-self:flex-start}
+
+/* ============================================================
    8. PROJETS
    ============================================================ */
 .cases{border-top:1px solid var(--line-strong)}
@@ -532,9 +547,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   <a href="#projets"><span>03</span>Projets</a>
   <a href="#approche"><span>04</span>Approche</a>
   <a href="#parcours"><span>05</span>Parcours</a>
-  <a href="#afrique"><span>06</span>Data for Africa</a>
-  <a href="#services"><span>07</span>Services</a>
-  <a href="#contact"><span>08</span>Contact</a>
+  <a href="#certifications"><span>06</span>Certifications</a>
+  <a href="#afrique"><span>07</span>Data for Africa</a>
+  <a href="#services"><span>08</span>Services</a>
+  <a href="#contact"><span>09</span>Contact</a>
 </div>
 
 <!-- ══════════════ RAIL ══════════════ -->
@@ -546,6 +562,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   <a class="rail-item" href="#projets"><span class="rail-dot"></span><span class="rail-lbl">Projets</span></a>
   <a class="rail-item" href="#approche"><span class="rail-dot"></span><span class="rail-lbl">Approche</span></a>
   <a class="rail-item" href="#parcours"><span class="rail-dot"></span><span class="rail-lbl">Parcours</span></a>
+  <a class="rail-item" href="#certifications"><span class="rail-dot"></span><span class="rail-lbl">Certifications</span></a>
   <a class="rail-item" href="#afrique"><span class="rail-dot"></span><span class="rail-lbl">Afrique</span></a>
   <a class="rail-item" href="#services"><span class="rail-dot"></span><span class="rail-lbl">Services</span></a>
   <a class="rail-item" href="#cv"><span class="rail-dot"></span><span class="rail-lbl">CV</span></a>
@@ -886,11 +903,43 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   </div>
 </section>
 
-<!-- ══════════════ DATA FOR AFRICA ══════════════ -->
-<section class="sec africa" id="afrique" data-sec="6">
+<!-- ══════════════ CERTIFICATIONS ══════════════ -->
+<section class="sec" id="certifications" data-sec="6">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow mono">06 — Vision</div>
+      <div class="eyebrow mono">06 — Certifications</div>
+      <h2 class="h-sec">Formation continue</h2>
+      <p class="lead" style="margin-top:16px">Des compétences vérifiées, au-delà du diplôme.</p>
+    </div>
+
+    <div class="certs">
+      <article class="cert rv">
+        <span class="cert-org mono">Cisco Networking Academy</span>
+        <h3>Data Science Essentials with Python</h3>
+        <span class="cert-date mono">Août 2026</span>
+        <a class="link-s" href="cert-data-science-essentials-python.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+      </article>
+      <article class="cert rv" data-d="1">
+        <span class="cert-org mono">Cisco Networking Academy</span>
+        <h3>Introduction à la science des données</h3>
+        <span class="cert-date mono">Avril 2026</span>
+        <a class="link-s" href="cert-introduction-data-science.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+      </article>
+      <article class="cert rv" data-d="2">
+        <span class="cert-org mono">ONU — Office contre la Drogue et le Crime (SPARK)</span>
+        <h3>Cybercriminalité</h3>
+        <span class="cert-date mono">Avril 2026</span>
+        <a class="link-s" href="cert-cybercriminalite-unodc.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ DATA FOR AFRICA ══════════════ -->
+<section class="sec africa" id="afrique" data-sec="7">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow mono">07 — Vision</div>
       <h2 class="h-sec">Data for Africa</h2>
     </div>
     <div class="afr-grid">
@@ -910,10 +959,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 </section>
 
 <!-- ══════════════ SERVICES ══════════════ -->
-<section class="sec" id="services" data-sec="7">
+<section class="sec" id="services" data-sec="8">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow mono">07 — Services</div>
+      <div class="eyebrow mono">08 — Services</div>
       <h2 class="h-sec">Ce que je peux faire</h2>
     </div>
     <div class="srv rv">
@@ -931,11 +980,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 </section>
 
 <!-- ══════════════ CV ══════════════ -->
-<section class="sec" id="cv" data-sec="8">
+<section class="sec" id="cv" data-sec="9">
   <div class="wrap">
     <div class="cv">
       <div class="rv">
-        <div class="eyebrow mono">08 — Curriculum vitae</div>
+        <div class="eyebrow mono">09 — Curriculum vitae</div>
         <h2 class="h-sec">Le dossier complet</h2>
         <p class="lead" style="margin-top:18px">Le détail de ma formation, de mes expériences et de mes compétences, en une page à emporter.</p>
         <div class="cta-row" style="margin-top:28px">
@@ -962,11 +1011,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 </section>
 
 <!-- ══════════════ CONTACT ══════════════ -->
-<section class="sec contact" id="contact" data-sec="9">
+<section class="sec contact" id="contact" data-sec="10">
   <div class="wrap">
     <div class="ct">
       <div class="rv">
-        <div class="eyebrow mono">09 — Contact</div>
+        <div class="eyebrow mono">10 — Contact</div>
         <h2 class="h-sec">Travaillons ensemble</h2>
         <p class="lead" style="margin-top:18px">Vous avez un projet Data, une problématique métier ou une idée que vous souhaitez transformer en solution numérique&nbsp;? Écrivez-moi, je réponds à chaque message.</p>
         <!-- ÉDITER : vos liens réels -->
