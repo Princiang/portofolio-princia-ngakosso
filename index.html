@@ -48,8 +48,10 @@
   --max:1180px;
   --gut:clamp(20px,5vw,64px);
 
-  --r-sm:4px; --r-md:12px; --r-lg:20px;
+  --r-sm:4px; --r-md:12px; --r-lg:20px; --r-pill:999px;
   --ease:cubic-bezier(.22,.8,.28,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur-1:.16s; --dur-2:.28s; --dur-3:.5s;
 }
 
 html[data-theme="light"]{
@@ -123,12 +125,18 @@ p:last-child{margin-bottom:0}
 /* Section shell ------------------------------------------------ */
 .sec{position:relative;padding-block:clamp(76px,11vw,140px);scroll-margin-top:90px}
 .sec + .sec{border-top:1px solid var(--line)}
-.sec-head{margin-bottom:clamp(34px,5vw,58px)}
+.sec-head{position:relative;margin-bottom:clamp(34px,5vw,58px)}
+.sec-num{
+  position:absolute;top:-.4em;right:0;font-family:var(--f-display);font-weight:700;
+  font-size:clamp(3rem,8.5vw,6.2rem);color:var(--line-strong);opacity:.55;line-height:1;
+  user-select:none;pointer-events:none;
+}
+@media(max-width:600px){.sec-num{font-size:2.4rem;opacity:.4}}
 .eyebrow{display:flex;align-items:center;gap:12px;color:var(--primary);margin-bottom:18px}
 .eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line-strong),transparent);max-width:220px}
 
 /* Reveal ------------------------------------------------------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv{opacity:0;transform:translateY(18px) scale(.99);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out)}
 .rv.in{opacity:1;transform:none}
 .rv[data-d="1"]{transition-delay:.09s}
 .rv[data-d="2"]{transition-delay:.18s}
@@ -158,9 +166,17 @@ p:last-child{margin-bottom:0}
 .nav-links a{font-size:.86rem;color:var(--muted);transition:color .25s;position:relative}
 .nav-links a:hover{color:var(--text)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--primary);transition:width .3s var(--ease)}
-.nav-links a:hover::after{width:100%}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--text)}
 .nav-act{display:flex;align-items:center;gap:10px;margin-left:auto}
 .nav-links + .nav-act{margin-left:0}
+.nav-cv{
+  display:none;align-items:center;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--primary);color:#fff;padding:9px 16px;border-radius:var(--r-pill);
+  transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out);
+}
+.nav-cv:hover{transform:translateY(-1px);box-shadow:0 10px 24px -10px var(--glow)}
+@media(min-width:701px){.nav-cv{display:inline-flex}}
 .icon-btn{
   width:38px;height:38px;border-radius:10px;border:1px solid var(--line);
   display:grid;place-items:center;transition:border-color .25s,background .25s,transform .25s;
@@ -228,13 +244,16 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .hero-p{max-width:48ch;color:var(--muted);margin-bottom:34px}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:var(--r-md);
-  font-family:var(--f-body);font-weight:600;font-size:.86rem;
-  border:1px solid var(--line-strong);transition:all .3s var(--ease);
+  position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:var(--r-md);
+  font-family:var(--f-body);font-weight:600;font-size:.86rem;overflow:hidden;
+  border:1px solid var(--line-strong);transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out),border-color var(--dur-2) var(--ease-out),background var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out);
 }
-.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .3s var(--ease)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform var(--dur-2) var(--ease-out)}
 .btn:hover svg{transform:translate(3px,-3px)}
+.btn:active{transform:scale(.97)}
 .btn-p{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn-p::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s var(--ease-out)}
+.btn-p:hover::after{transform:translateX(120%)}
 .btn-p:hover{box-shadow:0 14px 34px -12px var(--glow);transform:translateY(-2px)}
 .btn-g:hover{background:var(--panel);border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
 .btn-g:hover svg{transform:translateY(3px)}
@@ -350,7 +369,12 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .sk h3{font-family:var(--f-mono);font-weight:500;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sk p{font-size:.9rem;color:var(--muted);margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips span{border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:.78rem;color:var(--text);background:var(--panel-2)}
+.chips span{border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:.78rem;color:var(--text);background:var(--panel-2);transition:border-color var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out)}
+.chips span:hover{border-color:var(--primary);color:var(--primary)}
+.arrow-list{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+.arrow-list li{display:flex;align-items:baseline;gap:10px;font-size:.87rem;color:var(--text)}
+.arrow-list li::before{content:"→";color:var(--primary);font-family:var(--f-mono);flex:none;transition:transform var(--dur-2) var(--ease-out)}
+.sk:hover .arrow-list li::before{transform:translateX(3px)}
 
 /* ============================================================
    7bis. CERTIFICATIONS
@@ -373,9 +397,11 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .cases{border-top:1px solid var(--line-strong)}
 .case{border-bottom:1px solid var(--line)}
 .case-h{
-  width:100%;display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;
-  padding:26px 0;text-align:left;transition:padding .35s var(--ease);
+  width:calc(100% + 36px);display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;
+  padding:26px 18px;margin:0 -18px;text-align:left;border-radius:var(--r-md);
+  transition:padding var(--dur-3) var(--ease-out),background var(--dur-3) var(--ease-out);
 }
+.case-h:hover{background:var(--panel-2);padding-left:26px}
 .case-h:hover .case-t{color:var(--primary)}
 .case-n{font-family:var(--f-mono);font-size:.68rem;color:var(--primary);letter-spacing:.08em}
 .case-t{font-family:var(--f-display);font-weight:700;font-size:clamp(1.2rem,3vw,1.7rem);letter-spacing:-.02em;transition:color .3s;line-height:1.2}
@@ -400,13 +426,15 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .ps p{color:var(--muted);font-size:.95rem;margin:0}
 .ps-note{font-size:.85rem;color:var(--muted);font-style:italic}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.tags span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.04em;border:1px solid var(--line);border-radius:5px;padding:4px 9px;color:var(--muted)}
+.tags span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.04em;border:1px solid var(--line);border-radius:5px;padding:4px 9px;color:var(--muted);transition:border-color var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out)}
+.tags span:hover{border-color:var(--primary);color:var(--primary)}
 .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 .link-s{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line-strong);padding-bottom:4px;transition:color .25s,border-color .25s}
 .link-s:hover{color:var(--primary);border-color:var(--primary)}
 
 /* Visuels de projets */
-.mock{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:22px;min-height:100%}
+.mock{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:22px;min-height:100%;transition:transform var(--dur-3) var(--ease-out),box-shadow var(--dur-3) var(--ease-out)}
+.mock:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .mock-cap{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;display:block}
 .gauges{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .gauge{text-align:center}
@@ -447,7 +475,7 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .tl-i{position:relative;padding:0 0 34px 30px}
 .tl-i::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--primary)}
 .tl-i:hover::before{background:var(--primary);box-shadow:0 0 0 4px var(--glow)}
-.tl-d{font-family:var(--f-mono);font-size:.65rem;letter-spacing:.12em;color:var(--primary);text-transform:uppercase}
+.tl-d{font-family:var(--f-mono);font-size:.8rem;font-weight:500;letter-spacing:.06em;color:var(--primary);text-transform:uppercase}
 .tl-i h3{font-size:1.12rem;margin:8px 0 3px;letter-spacing:-.01em}
 .tl-o{color:var(--muted);font-size:.9rem;margin-bottom:8px}
 .tl-i ul{margin:0;padding-left:17px;color:var(--muted);font-size:.9rem}
@@ -464,8 +492,11 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .domains span:hover{border-color:var(--primary);color:var(--primary)}
 #afrmap{width:100%;height:auto;max-width:430px;margin-inline:auto;display:block}
 #afrmap circle{fill:var(--primary);opacity:.30}
-#afrmap circle.hi{fill:var(--violet);opacity:.95}
-#afrmap line{stroke:var(--primary);stroke-width:.6;opacity:.2}
+#afrmap circle.hi{fill:var(--violet);opacity:.95;animation:afrPulse 3.6s ease-in-out infinite}
+#afrmap circle.hi:nth-of-type(3n){animation-delay:-1.2s}
+#afrmap circle.hi:nth-of-type(5n){animation-delay:-2.4s}
+#afrmap line{stroke:var(--primary);stroke-width:.6;opacity:.18}
+@keyframes afrPulse{0%,100%{opacity:.95;r:3.4}50%{opacity:.5;r:4.4}}
 
 /* ============================================================
    12. SERVICES
@@ -533,9 +564,12 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 @media(max-width:520px){
   body{font-size:16px}
   .btn{flex:1;justify-content:center}
+  .btn-ghost{flex:none;width:100%;text-align:center;padding-top:4px}
   .gauges{grid-template-columns:repeat(2,1fr)}
   .dash{grid-template-columns:repeat(2,1fr)}
   .pill-award{display:block;margin-left:0;margin-top:10px;width:fit-content}
+  .hero-stats{gap:20px 26px}
+  .nav-cv{display:none!important}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
@@ -551,14 +585,15 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   <div class="nav-in">
     <a href="#top" class="brand"><span class="mark">PN</span> Princia Ngakosso</a>
     <nav class="nav-links">
-      <a href="#profil">Profil</a>
-      <a href="#arsenal">Expertise</a>
-      <a href="#projets">Projets</a>
-      <a href="#approche">Approche</a>
-      <a href="#parcours">Parcours</a>
-      <a href="#contact">Contact</a>
+      <a href="#profil" data-sec="1">Profil</a>
+      <a href="#arsenal" data-sec="2">Expertise</a>
+      <a href="#projets" data-sec="3">Projets</a>
+      <a href="#approche" data-sec="4">Approche</a>
+      <a href="#parcours" data-sec="5">Parcours</a>
+      <a href="#contact" data-sec="10">Contact</a>
     </nav>
     <div class="nav-act">
+      <a href="cv-princia-ngakosso.pdf" download class="nav-cv">CV ↓</a>
       <button class="icon-btn" id="theme" aria-label="Basculer le thème clair ou sombre">
         <svg class="theme-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="theme-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -660,6 +695,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="profil" data-sec="1">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">01</span>
       <div class="eyebrow mono">01 — Profil</div>
       <h2 class="h-sec">Qui est Princia&nbsp;?</h2>
     </div>
@@ -713,6 +749,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="arsenal" data-sec="2">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">02</span>
       <div class="eyebrow mono">02 — Expertise</div>
       <h2 class="h-sec">Ce que je sais construire</h2>
       <p class="lead" style="margin-top:16px">Six domaines complémentaires, de la donnée brute à l'application finale.</p>
@@ -723,37 +760,37 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="sk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
         <h3>Data Science</h3>
         <p>Je conçois des modèles prédictifs et j'applique des méthodes statistiques rigoureuses pour transformer des données complexes en connaissance exploitable.</p>
-        <div class="chips"><span>Python</span><span>Statistiques</span><span>Scikit-learn</span><span>Modèles prédictifs</span></div>
+        <ul class="arrow-list"><li>Python</li><li>Statistiques</li><li>Scikit-learn</li><li>Modèles prédictifs</li></ul>
       </article>
       <article class="sk rv" data-d="1">
         <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V4M16 19v-7M22 19H2"/></svg></div>
         <h3>Data Analytics</h3>
         <p>Je nettoie, explore et structure des jeux de données bruts pour en extraire des insights fiables et directement actionnables.</p>
-        <div class="chips"><span>Pandas</span><span>NumPy</span><span>SQL</span><span>R</span><span>SPSS</span><span>Excel Avancé</span></div>
+        <ul class="arrow-list"><li>Pandas</li><li>NumPy</li><li>SQL</li><li>R</li><li>SPSS</li><li>Excel Avancé</li></ul>
       </article>
       <article class="sk rv" data-d="2">
         <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
         <h3>Business Intelligence</h3>
         <p>Je construis des tableaux de bord décisionnels et des indicateurs clairs qui donnent aux équipes une lecture immédiate de leur activité.</p>
-        <div class="chips"><span>Power BI</span><span>DAX</span><span>KPI</span><span>Reporting</span></div>
+        <ul class="arrow-list"><li>Power BI</li><li>DAX</li><li>KPI</li><li>Reporting</li></ul>
       </article>
       <article class="sk rv" data-d="3">
         <div class="sk-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
         <h3>Intelligence Artificielle</h3>
         <p>Je développe des solutions de Machine Learning et de vision par ordinateur appliquées à des problématiques réelles, comme la détection médicale assistée par IA.</p>
-        <div class="chips"><span>TensorFlow</span><span>Keras</span><span>CNN</span><span>Deep Learning</span><span>APIs IA</span></div>
+        <ul class="arrow-list"><li>TensorFlow</li><li>Keras</li><li>CNN</li><li>Deep Learning</li><li>APIs IA</li></ul>
       </article>
       <article class="sk rv" data-d="4">
         <div class="sk-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
         <h3>Data Engineering</h3>
         <p>Je conçois des bases de données fiables et des pipelines de traitement qui alimentent proprement l'analyse et les modèles.</p>
-        <div class="chips"><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>Pipelines</span></div>
+        <ul class="arrow-list"><li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Pipelines</li></ul>
       </article>
       <article class="sk rv" data-d="5">
         <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg></div>
         <h3>Digital Solutions</h3>
         <p>Je développe des applications web complètes, de l'architecture backend à l'interface, pour rendre la donnée utile au quotidien.</p>
-        <div class="chips"><span>Django</span><span>DRF</span><span>Python</span><span>Automatisation</span></div>
+        <ul class="arrow-list"><li>Django</li><li>DRF</li><li>Python</li><li>Automatisation</li></ul>
       </article>
     </div>
   </div>
@@ -763,6 +800,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="projets" data-sec="3">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">03</span>
       <div class="eyebrow mono">03 — Réalisations</div>
       <h2 class="h-sec">Études de cas</h2>
       <p class="lead" style="margin-top:16px">Quatre projets réels. Cliquez pour voir le problème, la méthode, les technologies et le résultat de chacun.</p>
@@ -914,6 +952,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="approche" data-sec="4">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">04</span>
       <div class="eyebrow mono">04 — Méthode</div>
       <h2 class="h-sec">De la donnée à la décision</h2>
       <p class="lead" style="margin-top:16px">Collecter → Nettoyer → Analyser → Modéliser → Visualiser → Développer → Déployer → Transformer la donnée en décision.</p>
@@ -935,6 +974,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="parcours" data-sec="5">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">05</span>
       <div class="eyebrow mono">05 — Expérience</div>
       <h2 class="h-sec">Mon parcours</h2>
     </div>
@@ -986,6 +1026,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="certifications" data-sec="6">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">06</span>
       <div class="eyebrow mono">06 — Certifications</div>
       <h2 class="h-sec">Formation continue</h2>
       <p class="lead" style="margin-top:16px">Des compétences vérifiées, au-delà du diplôme.</p>
@@ -1018,6 +1059,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec africa" id="afrique" data-sec="7">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">07</span>
       <div class="eyebrow mono">07 — Vision</div>
       <h2 class="h-sec">Data for Africa</h2>
     </div>
@@ -1041,6 +1083,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <section class="sec" id="services" data-sec="8">
   <div class="wrap">
     <div class="sec-head rv">
+      <span class="sec-num" aria-hidden="true">08</span>
       <div class="eyebrow mono">08 — Services</div>
       <h2 class="h-sec">Ce que je peux faire</h2>
     </div>
@@ -1125,7 +1168,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   <div class="wrap foot">
     <div>
       <div class="foot-n">Princia Ngakosso</div>
-      <div class="foot-t">Data • Intelligence • Innovation</div>
+      <div class="foot-t">Data → Intelligence → Impact</div>
     </div>
     <div class="foot-c">© 2026 Princia Ngakosso — Tous droits réservés.</div>
     <a href="#top" class="to-top">Retour en haut ↑</a>
@@ -1178,11 +1221,13 @@ window.addEventListener("scroll", function(){
 onScroll();
 
 if ("IntersectionObserver" in window){
+  var navLinkEls = document.querySelectorAll(".nav-links a[data-sec]");
   var secObs = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if (!en.isIntersecting) return;
       var i = +en.target.getAttribute("data-sec");
       Array.prototype.forEach.call(railItems, function(it, k){ it.classList.toggle("active", k === i); });
+      Array.prototype.forEach.call(navLinkEls, function(a){ a.classList.toggle("active", +a.getAttribute("data-sec") === i); });
     });
   }, {rootMargin:"-45% 0px -45% 0px"});
   Array.prototype.forEach.call(sections, function(s){ secObs.observe(s); });
@@ -1303,6 +1348,15 @@ var cv = document.getElementById("flow"), ctx = cv.getContext("2d");
 var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
 var N = window.innerWidth < 700 ? 46 : 84;
 var pts = [], phase = 0, t = 0, raf = null;
+var canHover = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+var mouse = {x:-9999, y:-9999, active:false};
+if (canHover && !reduce){
+  cv.addEventListener("mousemove", function(e){
+    var r = cv.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.active = true;
+  });
+  cv.addEventListener("mouseleave", function(){ mouse.active = false; });
+}
 
 function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
 
@@ -1343,6 +1397,13 @@ function tick(){
   for (var i = 0; i < pts.length; i++){
     var p = pts[i], tg = phase === 0 ? p.t0 : (phase === 1 ? p.t1 : p.t2);
     p.vx += (tg.x - p.x) * .0022; p.vy += (tg.y - p.y) * .0022;
+    if (mouse.active){
+      var mdx = p.x - mouse.x, mdy = p.y - mouse.y, md2 = mdx*mdx + mdy*mdy, R = 120*120;
+      if (md2 < R && md2 > 4){
+        var f = (1 - md2/R) * .8, d = Math.sqrt(md2);
+        p.vx += (mdx/d) * f; p.vy += (mdy/d) * f;
+      }
+    }
     p.vx *= .93; p.vy *= .93;
     p.x += p.vx; p.y += p.vy;
   }
@@ -1398,23 +1459,34 @@ if ("IntersectionObserver" in window && !reduce){
   }, {threshold:.02}).observe(cv);
 }
 
-/* ---------- RÉSEAU « DATA FOR AFRICA » ---------- */
+/* ---------- RÉSEAU DE DONNÉES (abstrait, sans forme géographique) ---------- */
 var svg = document.getElementById("afrmap");
 if (svg){
   var NS = "http://www.w3.org/2000/svg";
-  // grille de points formant une masse continentale stylisée (abstraite, non cartographique)
-  var rows = [
-    [110,150,190],[95,130,165,200],[85,120,155,190,215],[80,115,150,185,215],
-    [85,120,155,190,215],[95,130,165,200,225],[100,135,170,205],[105,140,175,205],
-    [110,145,180,205],[115,150,180],[120,155,180],[130,160],[140,165]
-  ];
-  var nodes = [];
-  rows.forEach(function(r, ri){
-    r.forEach(function(x, ci){
-      var y = 34 + ri * 23;
-      nodes.push({x:x, y:y, hi:((ri * 7 + ci * 5) % 11 === 0)});
-    });
-  });
+  // PRNG déterministe (mulberry32) pour un motif stable et reproductible
+  function mulberry32(seed){
+    return function(){
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  var rnd = mulberry32(2026);
+  // Composition en diagonale : flux de données montant, sans intention cartographique
+  var nodes = [], bands = 14;
+  for (var bi = 0; bi < bands; bi++){
+    var count = 3 + Math.floor(rnd() * 3);
+    var by = 24 + bi * (296 / bands);
+    var bx = 30 + bi * (8 + rnd() * 6);
+    for (var ci = 0; ci < count; ci++){
+      nodes.push({
+        x: bx + ci * (26 + rnd() * 30) + (rnd() - .5) * 18,
+        y: by + (rnd() - .5) * 22,
+        hi: rnd() < 0.16
+      });
+    }
+  }
   var frag = document.createDocumentFragment();
   for (var i = 0; i < nodes.length; i++){
     for (var j = i + 1; j < nodes.length; j++){
@@ -1435,6 +1507,30 @@ if (svg){
     frag.appendChild(c);
   });
   svg.appendChild(frag);
+}
+
+/* ---------- COMPTEUR DES CHIFFRES CLÉS ---------- */
+if (!reduce){
+  var statEls = document.querySelectorAll(".hero-stats .stat b");
+  Array.prototype.forEach.call(statEls, function(el, idx){
+    var raw = el.textContent;
+    var m = raw.match(/^([\d.,]+)(.*)$/);
+    if (!m) return;
+    var numStr = m[1].replace(",", "."), suffix = m[2], target = parseFloat(numStr);
+    var decimals = (numStr.split(".")[1] || "").length;
+    if (isNaN(target)) return;
+    window.setTimeout(function(){
+      var start = null, dur = 1000;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * eased).toFixed(decimals).replace(".", ",") + suffix;
+        if (p < 1) window.requestAnimationFrame(step); else el.textContent = raw;
+      }
+      window.requestAnimationFrame(step);
+    }, 500 + idx * 130);
+  });
 }
 
 /* ---------- FORMULAIRE ---------- */
