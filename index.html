@@ -238,6 +238,17 @@ html[data-theme="light"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .btn-g:hover{background:var(--panel);border-color:var(--emerald);color:var(--emerald);transform:translateY(-2px)}
 .btn-g:hover svg{transform:translateY(3px)}
 
+/* Photo héros --------------------------------------------------- */
+.hero-photo{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.ph-frame{
+  position:relative;width:100px;height:100px;flex:none;border-radius:50%;padding:3px;
+  background:linear-gradient(145deg,var(--green),var(--emerald));box-shadow:0 14px 34px -16px var(--glow);
+}
+.ph-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:2px solid var(--bg)}
+.ph-dot{position:absolute;right:1px;bottom:1px;width:16px;height:16px;border-radius:50%;background:var(--emerald);border:3px solid var(--bg)}
+.hero-photo .ph-txt b{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--emerald);display:block;margin-bottom:4px}
+.hero-photo .ph-txt span{font-size:.84rem;color:var(--muted)}
+
 /* Stats héros ------------------------------------------------- */
 .hero-stats{display:flex;flex-wrap:wrap;gap:30px;margin-top:38px}
 .hero-stats .stat b{
@@ -596,11 +607,21 @@ footer{border-top:1px solid var(--line);padding-block:38px}
       </div>
     </div>
 
-    <div class="console rv in" data-d="3" aria-hidden="true">
-      <div class="console-bar"><b></b><b></b><b></b><span>pipeline.py</span></div>
-      <pre class="code" id="code"></pre>
-      <div class="spark" id="spark">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <div>
+      <div class="hero-photo rv in" data-d="2">
+        <div class="ph-frame">
+          <img src="photo-princia.jpg" alt="Portrait de Princia Ngakosso" width="100" height="100">
+          <span class="ph-dot" aria-hidden="true"></span>
+        </div>
+        <div class="ph-txt"><b>Brazzaville, Congo</b><span>Disponible pour de nouvelles opportunités</span></div>
+      </div>
+
+      <div class="console rv in" data-d="3" aria-hidden="true">
+        <div class="console-bar"><b></b><b></b><b></b><span>pipeline.py</span></div>
+        <pre class="code" id="code"></pre>
+        <div class="spark" id="spark">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
       </div>
     </div>
 
