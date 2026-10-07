@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Princia Ngakosso | Data Scientist &amp; Data Analyst</title>
 <meta name="description" content="Princia Ngakosso — Data Scientist, Data Analyst &amp; experte Business Intelligence. Je conçois des solutions Data et IA de bout en bout : de la donnée brute à la décision.">
 <meta name="author" content="Princia Ngakosso">
-<meta name="theme-color" content="#F7F1E7">
+<meta name="theme-color" content="#13100D">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Données structurées -->
 <script type="application/ld+json">
@@ -41,7 +41,7 @@
    1. TOKENS
    ============================================================ */
 :root{
-  --f-display:"Space Grotesk","Segoe UI",system-ui,sans-serif;
+  --f-display:"Fraunces","Georgia",serif;
   --f-body:"Inter",system-ui,-apple-system,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
 
@@ -54,39 +54,39 @@
   --dur-1:.16s; --dur-2:.28s; --dur-3:.5s;
 }
 
-html[data-theme="light"]{
-  --bg:#F7F1E7;
-  --bg-2:#EFE5D6;
-  --panel:#FDFAF5;
-  --panel-2:#F3EADC;
-  --line:rgba(43,37,30,.12);
-  --line-strong:rgba(43,37,30,.22);
-  --text:#201A14;
-  --muted:#574B3C;
-  --primary:#9A4330;
-  --primary-2:#742F20;
-  --violet:#5C3C2B;
-  --electric:#C9A063;
-  --amber:#A8752E;
-  --glow:rgba(181,84,58,.22);
-  --shadow:0 24px 55px -28px rgba(42,30,20,.22);
-}
 html[data-theme="dark"]{
-  --bg:#1C1713;
-  --bg-2:#221B16;
-  --panel:#2B2219;
-  --panel-2:#33281D;
-  --line:rgba(247,237,222,.09);
-  --line-strong:rgba(247,237,222,.18);
-  --text:#F5ECDF;
-  --muted:#B5A897;
-  --primary:#E08159;
-  --primary-2:#C25C3A;
-  --violet:#B3927A;
-  --electric:#D9A857;
-  --amber:#D9A857;
-  --glow:rgba(224,129,89,.30);
-  --shadow:0 26px 60px -28px rgba(0,0,0,.65);
+  --bg:#13100D;
+  --bg-2:#181410;
+  --panel:#1C1714;
+  --panel-2:#221C17;
+  --line:rgba(237,230,216,.10);
+  --line-strong:rgba(237,230,216,.20);
+  --text:#F2ECE1;
+  --muted:#9C9284;
+  --primary:#1FB378;
+  --primary-2:#148A5C;
+  --violet:#9C9284;
+  --electric:#1FB378;
+  --amber:#C6963E;
+  --glow:rgba(31,179,120,.28);
+  --shadow:0 26px 60px -28px rgba(0,0,0,.7);
+}
+html[data-theme="light"]{
+  --bg:#F7F5EF;
+  --bg-2:#EFEBDF;
+  --panel:#FFFFFF;
+  --panel-2:#F2EFE6;
+  --line:rgba(26,32,27,.12);
+  --line-strong:rgba(26,32,27,.22);
+  --text:#161512;
+  --muted:#5E5A4E;
+  --primary:#157A52;
+  --primary-2:#0F5E3F;
+  --violet:#5E5A4E;
+  --electric:#157A52;
+  --amber:#8F6424;
+  --glow:rgba(21,122,82,.20);
+  --shadow:0 24px 55px -28px rgba(20,20,16,.18);
 }
 
 /* ============================================================
@@ -177,7 +177,14 @@ p:last-child{margin-bottom:0}
 }
 .nav-cv:hover{transform:translateY(-1px);box-shadow:0 10px 24px -10px var(--glow)}
 @media(min-width:701px){.nav-cv{display:inline-flex}}
-.lang-btn{font-family:var(--f-mono);font-weight:600;font-size:.64rem;letter-spacing:.04em}
+.pill-btn{
+  height:38px;padding:0 15px;border-radius:var(--r-pill);border:1px solid var(--line);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-weight:500;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);transition:border-color .25s,background .25s,transform .25s,color .25s;white-space:nowrap;
+}
+.pill-btn:hover{border-color:var(--line-strong);background:var(--panel);color:var(--text);transform:translateY(-1px)}
+.lang-btn{font-weight:600;letter-spacing:.04em}
 .lang-btn:active{transform:scale(.92)}
 body.i18n-fade{opacity:.35;transition:opacity .16s var(--ease-out)}
 body{opacity:1;transition:opacity .22s var(--ease-out),background .5s var(--ease),color .5s var(--ease)}
@@ -187,9 +194,6 @@ body{opacity:1;transition:opacity .22s var(--ease-out),background .5s var(--ease
 }
 .icon-btn:hover{border-color:var(--line-strong);background:var(--panel);transform:translateY(-1px)}
 .icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6}
-.theme-sun{display:none}
-html[data-theme="dark"] .theme-sun{display:block}
-html[data-theme="dark"] .theme-moon{display:none}
 .burger{display:none}
 .progress{position:absolute;left:0;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--primary-2),var(--primary));transition:width .12s linear}
 
@@ -229,12 +233,27 @@ html[data-theme="dark"] .theme-moon{display:none}
    5. HERO
    ============================================================ */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:96px;padding-bottom:60px;overflow:hidden}
-#flow{position:absolute;inset:0;width:100%;height:100%;opacity:.7}
-html[data-theme="dark"] #flow{opacity:.85}
 .hero::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(120% 80% at 12% 40%,transparent 30%,var(--bg) 88%);
 }
+.diamond-bg{position:relative}
+.diamond-bg::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 4 L48 26 L26 48 L4 26 Z' fill='none' stroke='%238F6424' stroke-width='1' opacity='0.35'/%3E%3C/svg%3E");
+}
+html[data-theme="dark"] .diamond-bg::before{opacity:.3}
+.hero-visual{position:relative;max-width:440px;margin-inline:auto}
+.flow-svg{width:100%;height:auto;display:block}
+.flow-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;fill:var(--muted)}
+.flow-paths path{fill:none;stroke:var(--primary);stroke-width:1.2;stroke-dasharray:4 6;opacity:.55;animation:flowDash 7s linear infinite}
+.flow-paths path:nth-child(2n){animation-duration:9s;opacity:.4}
+.flow-paths path:nth-child(3n){stroke:var(--amber);opacity:.4}
+@keyframes flowDash{to{stroke-dashoffset:-100}}
+.flow-tail{stroke:var(--amber);stroke-width:1.2}
+.flow-dot{fill:var(--primary)}
+.flow-ring{fill:none;stroke:var(--primary);stroke-width:1;opacity:.5;animation:flowRing 2.6s ease-out infinite}
+@keyframes flowRing{0%{r:7;opacity:.6}100%{r:22;opacity:0}}
 .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(30px,5vw,64px);align-items:center;width:100%}
 .hero-name{
   font-size:clamp(2.7rem,9.5vw,5.9rem);letter-spacing:-.04em;line-height:.96;margin-bottom:20px;
@@ -424,6 +443,11 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .case[data-open="true"] .case-body{grid-template-rows:1fr}
 .case-inner{overflow:hidden}
 .case-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(24px,4vw,48px);padding:6px 0 40px}
+.view-toggle{display:flex;gap:8px;margin-bottom:24px}
+.vt-btn{border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 16px;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);transition:all .25s var(--ease)}
+.vt-btn:hover{border-color:var(--line-strong);color:var(--text)}
+.vt-btn.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.view-exec-panel p{font-family:var(--f-display);font-size:1.15rem;line-height:1.5;color:var(--text);font-weight:500}
 .ps{margin-bottom:22px}
 .ps h4{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .ps h4 i{font-style:normal;color:var(--primary)}
@@ -440,14 +464,13 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 .mock{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:22px;min-height:100%;transition:transform var(--dur-3) var(--ease-out),box-shadow var(--dur-3) var(--ease-out)}
 .mock:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .mock-cap{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;display:block}
-.gauges{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.gauge{text-align:center}
-.gauge svg{width:100%;max-width:98px;height:auto;margin:0 auto;transform:rotate(-90deg)}
-.gauge circle{fill:none;stroke-width:6;stroke-linecap:round}
-.gauge .bgc{stroke:var(--line)}
-.gauge .fgc{stroke:var(--primary);stroke-dasharray:264;stroke-dashoffset:264;transition:stroke-dashoffset 1.4s var(--ease)}
-.gauge b{display:block;font-family:var(--f-display);font-size:1.24rem;letter-spacing:-.02em;margin-top:-52px;margin-bottom:32px}
-.gauge span{display:block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.barmetrics{display:flex;flex-direction:column;gap:16px}
+.bm-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;font-family:var(--f-mono);font-size:.72rem}
+.bm-top span{color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-size:.66rem}
+.bm-top b{font-family:var(--f-display);font-weight:600;color:var(--text)}
+.bm-track{height:7px;border-radius:var(--r-pill);background:var(--panel-2);border:1px solid var(--line);overflow:hidden}
+.bm-track i{display:block;height:100%;width:0;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--primary-2),var(--primary));transition:width 1.3s var(--ease)}
+.bm-track.in i{width:calc(var(--v) * 1%)}
 .arch{display:flex;flex-direction:column;gap:9px}
 .arch div{border:1px solid var(--line);border-left:2px solid var(--primary);border-radius:var(--r-sm);padding:11px 14px;font-family:var(--f-mono);font-size:.7rem;color:var(--muted);background:var(--panel-2)}
 .arch div b{color:var(--text);font-weight:500}
@@ -489,18 +512,18 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
    11. DATA FOR AFRICA
    ============================================================ */
 .africa{background:var(--bg-2)}
+.afr-panel{border:1px solid var(--amber);border-radius:var(--r-lg);padding:clamp(26px,4vw,48px);background:var(--panel)}
 .afr-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(30px,5vw,64px);align-items:center}
-.quote{font-family:var(--f-display);font-weight:600;font-size:clamp(1.15rem,2.8vw,1.6rem);line-height:1.32;letter-spacing:-.015em;border-left:2px solid var(--violet);padding-left:22px;margin-bottom:28px}
+.quote{font-family:var(--f-display);font-style:italic;font-weight:500;font-size:clamp(1.15rem,2.8vw,1.6rem);line-height:1.32;letter-spacing:-.005em;border-left:2px solid var(--amber);padding-left:22px;margin-bottom:28px}
 .domains{display:flex;flex-wrap:wrap;gap:8px}
 .domains span{border:1px solid var(--line);border-radius:99px;padding:8px 15px;font-size:.84rem;color:var(--muted);transition:all .3s var(--ease)}
 .domains span:hover{border-color:var(--primary);color:var(--primary)}
-#afrmap{width:100%;height:auto;max-width:430px;margin-inline:auto;display:block}
-#afrmap circle{fill:var(--primary);opacity:.30}
-#afrmap circle.hi{fill:var(--violet);opacity:.95;animation:afrPulse 3.6s ease-in-out infinite}
-#afrmap circle.hi:nth-of-type(3n){animation-delay:-1.2s}
-#afrmap circle.hi:nth-of-type(5n){animation-delay:-2.4s}
-#afrmap line{stroke:var(--primary);stroke-width:.6;opacity:.18}
-@keyframes afrPulse{0%,100%{opacity:.95;r:3.4}50%{opacity:.5;r:4.4}}
+.afr-motif{display:flex;justify-content:center}
+.motif-svg{width:100%;max-width:300px;height:auto;display:block}
+.motif-outline path{fill:none;stroke:var(--amber);stroke-width:1.2;opacity:.6}
+.motif-primary{fill:none;stroke:var(--primary);stroke-width:1.6;opacity:.9}
+.motif-amber{fill:var(--amber);opacity:.85;animation:motifPulse 3.4s ease-in-out infinite}
+@keyframes motifPulse{0%,100%{opacity:.85}50%{opacity:.45}}
 
 /* ============================================================
    12. SERVICES
@@ -598,11 +621,8 @@ footer{border-top:1px solid var(--line);padding-block:38px}
     </nav>
     <div class="nav-act">
       <a href="cv-princia-ngakosso.pdf" download class="nav-cv">CV ↓</a>
-      <button class="icon-btn lang-btn" id="langBtn" aria-label="Switch language / Changer de langue">EN</button>
-      <button class="icon-btn" id="theme" aria-label="Basculer le thème clair ou sombre">
-        <svg class="theme-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="theme-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
+      <button class="pill-btn lang-btn" id="langBtn" aria-label="Switch language / Changer de langue">EN</button>
+      <button class="pill-btn" id="theme" aria-label="Basculer le thème clair ou sombre">Mode clair</button>
       <button class="icon-btn burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -642,8 +662,7 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 <main id="top">
 
 <!-- ══════════════ HERO ══════════════ -->
-<section class="hero" data-sec="0">
-  <canvas id="flow" aria-hidden="true"></canvas>
+<section class="hero diamond-bg" data-sec="0">
   <div class="wrap hero-in">
     <div>
       <h1 class="hero-name rv in">Princia<span class="l2">Ngakosso</span></h1>
@@ -675,12 +694,23 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="ph-txt"><b>Brazzaville, Congo</b><span data-i18n="hero.photoAvail">Disponible pour de nouvelles opportunités</span></div>
       </div>
 
-      <div class="console rv in" data-d="3" aria-hidden="true">
-        <div class="console-bar"><b></b><b></b><b></b><span>pipeline.py</span></div>
-        <pre class="code" id="code"></pre>
-        <div class="spark" id="spark">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
+      <div class="hero-visual rv in" data-d="3" aria-hidden="true">
+        <svg viewBox="0 0 420 420" class="flow-svg" preserveAspectRatio="xMidYMid meet">
+          <text x="14" y="26" class="flow-lbl" data-i18n="hero.vizData">DONNÉES</text>
+          <text x="406" y="246" class="flow-lbl" text-anchor="end" data-i18n="hero.vizDecision">DÉCISION</text>
+          <g class="flow-paths">
+            <path d="M20,50 C140,55 250,140 340,235"/>
+            <path d="M20,95 C150,100 260,160 340,235"/>
+            <path d="M20,145 C160,150 265,185 340,235"/>
+            <path d="M20,200 C170,200 270,215 340,235"/>
+            <path d="M20,260 C170,250 270,245 340,235"/>
+            <path d="M20,320 C170,290 270,255 340,235"/>
+            <path d="M20,365 C170,320 270,265 340,235"/>
+          </g>
+          <line x1="340" y1="235" x2="400" y2="235" class="flow-tail"/>
+          <circle cx="340" cy="235" r="7" class="flow-dot"/>
+          <circle cx="340" cy="235" r="14" class="flow-ring"/>
+        </svg>
       </div>
     </div>
 
@@ -824,6 +854,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="case-body" id="p1"><div class="case-inner"><div class="case-grid">
           <div>
             <span class="case-cat" data-i18n="proj.p1.cat">Intelligence Artificielle · Santé</span>
+            <div class="view-toggle" role="tablist">
+              <button class="vt-btn on" data-view="tech" data-i18n="proj.viewTech">Vue technique</button>
+              <button class="vt-btn" data-view="exec" data-i18n="proj.viewExec">Vue décideur</button>
+            </div>
+            <div class="view-panel view-tech-panel">
             <div class="ps"><h4><i>01</i><span data-i18n="proj.stepProblem">Problème</span></h4><p data-i18n="proj.p1.problem">Les professionnels de santé perdent un temps considérable à retrouver, relire et recouper l'information dispersée dans des documents médicaux non structurés (comptes rendus, résultats, ordonnances), souvent en PDF ou en image scannée — au détriment du temps disponible pour le soin.</p></div>
             <div class="ps"><h4><i>02</i><span data-i18n="proj.stepData">Données</span></h4><p data-i18n="proj.p1.data">Documents médicaux importés par les utilisateurs, en environnement de démonstration avec des données entièrement fictives — aucune donnée patient réelle.</p></div>
             <div class="ps"><h4><i>03</i><span data-i18n="proj.stepMethod">Méthode</span></h4><p data-i18n="proj.p1.method">OCR (Tesseract, PyMuPDF) pour l'extraction de texte, puis extraction structurée et classification par IA via une abstraction multi-fournisseur (Claude / Gemini) — avec validation humaine obligatoire avant que toute information ne soit considérée comme fiable.</p></div>
@@ -833,6 +868,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
             <div class="ps"><h4><i>05</i><span data-i18n="proj.stepSolution">Solution</span></h4><p data-i18n="proj.p1.solution">Plateforme complète avec contrôle d'accès par rôle (RBAC), workflow de validation humaine, journal d'audit, assistant IA conversationnel sur un dossier, recherche et génération de rapports PDF.</p></div>
             <div class="ps"><h4><i>06</i><span data-i18n="proj.stepResult">Résultat</span></h4><p data-i18n="proj.p1.result">15 phases livrées de bout en bout (architecture → déploiement), projet conçu et développé en solo pour le Hackathon MISSIO 2026 — « Réinventer la santé avec l'IA ».</p></div>
             <p class="ps-note" data-i18n="proj.p1.note">Code source privé — projet de hackathon, disponible sur demande.</p>
+            </div>
+            <div class="view-panel view-exec-panel" hidden>
+              <p data-i18n="proj.p1.exec">Les équipes de santé perdent un temps précieux à retrouver l'information dans des dossiers papier ou scannés. Cette plateforme lit les documents à leur place, fait vérifier chaque information par un humain avant de la valider, et restitue tout dans un tableau de bord clair. Résultat : moins de temps perdu, plus de temps pour les patients.</p>
+            </div>
           </div>
           <div class="mock">
             <span class="mock-cap" data-i18n="proj.p1.mockCap">Pipeline</span>
@@ -858,6 +897,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="case-body" id="p2"><div class="case-inner"><div class="case-grid">
           <div>
             <span class="case-cat" data-i18n="proj.p2.cat">Intelligence Artificielle · Computer Vision</span>
+            <div class="view-toggle" role="tablist">
+              <button class="vt-btn on" data-view="tech" data-i18n="proj.viewTech">Vue technique</button>
+              <button class="vt-btn" data-view="exec" data-i18n="proj.viewExec">Vue décideur</button>
+            </div>
+            <div class="view-panel view-tech-panel">
             <div class="ps"><h4><i>01</i><span data-i18n="proj.stepProblem">Problème</span></h4><p data-i18n="proj.p2.problem">Le dépistage précoce reste difficile d'accès dans de nombreux contextes. L'imagerie infrarouge est peu coûteuse et non invasive, mais son interprétation demande une expertise rare.</p></div>
             <div class="ps"><h4><i>02</i><span data-i18n="proj.stepData">Données</span></h4><p data-i18n="proj.p2.data">Jeu de données d'images infrarouges destinées à la classification.</p></div>
             <div class="ps"><h4><i>03</i><span data-i18n="proj.stepMethod">Méthode</span></h4><p data-i18n="proj.p2.method">Transfer learning sur l'architecture VGG16 : préparation des images, augmentation de données, entraînement et évaluation du modèle.</p></div>
@@ -866,14 +910,18 @@ footer{border-top:1px solid var(--line);padding-block:38px}
             </div>
             <div class="ps"><h4><i>05</i><span data-i18n="proj.stepSolution">Solution</span></h4><p data-i18n="proj.p2.solution">Modèle de classification d'images entraîné et évalué sur un jeu de test dédié.</p></div>
             <div class="ps"><h4><i>06</i><span data-i18n="proj.stepResult">Résultat</span></h4><p data-i18n="proj.p2.result">Accuracy 97,66&nbsp;%, precision 98,28&nbsp;%, recall 96,61&nbsp;%, F1-score 97,44&nbsp;%. Projet lauréat du <strong>Prix de l'innovation « Denis Sassou Nguesso »</strong>.</p></div>
+            </div>
+            <div class="view-panel view-exec-panel" hidden>
+              <p data-i18n="proj.p2.exec">Un modèle d'intelligence artificielle capable de repérer les signes du cancer du sein sur une image infrarouge avec 97,66&nbsp;% de fiabilité — un outil de dépistage précoce, rapide et peu coûteux, récompensé par le Prix national de l'innovation « Denis Sassou Nguesso ».</p>
+            </div>
           </div>
           <div class="mock">
-            <span class="mock-cap" data-i18n="proj.p2.mockCap">Performances du modèle</span>
-            <div class="gauges">
-              <div class="gauge"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="42"/><circle class="fgc" cx="50" cy="50" r="42" data-val="97.66"/></svg><b>97,66&nbsp;%</b><span>Accuracy</span></div>
-              <div class="gauge"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="42"/><circle class="fgc" cx="50" cy="50" r="42" data-val="98.28"/></svg><b>98,28&nbsp;%</b><span>Precision</span></div>
-              <div class="gauge"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="42"/><circle class="fgc" cx="50" cy="50" r="42" data-val="96.61"/></svg><b>96,61&nbsp;%</b><span>Recall</span></div>
-              <div class="gauge"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="42"/><circle class="fgc" cx="50" cy="50" r="42" data-val="97.44"/></svg><b>97,44&nbsp;%</b><span>F1-score</span></div>
+            <span class="mock-cap" data-i18n="proj.p2.resScale">Résultats (échelle 0 à 100 %)</span>
+            <div class="barmetrics">
+              <div class="barmetric"><div class="bm-top"><span>Accuracy</span><b>97,66&nbsp;%</b></div><div class="bm-track"><i style="--v:97.66"></i></div></div>
+              <div class="barmetric"><div class="bm-top"><span>Precision</span><b>98,28&nbsp;%</b></div><div class="bm-track"><i style="--v:98.28"></i></div></div>
+              <div class="barmetric"><div class="bm-top"><span>Recall</span><b>96,61&nbsp;%</b></div><div class="bm-track"><i style="--v:96.61"></i></div></div>
+              <div class="barmetric"><div class="bm-top"><span>F1-score</span><b>97,44&nbsp;%</b></div><div class="bm-track"><i style="--v:97.44"></i></div></div>
             </div>
           </div>
         </div></div></div>
@@ -890,6 +938,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="case-body" id="p3"><div class="case-inner"><div class="case-grid">
           <div>
             <span class="case-cat" data-i18n="proj.p3.cat">Solutions Digitales · Secteur Public</span>
+            <div class="view-toggle" role="tablist">
+              <button class="vt-btn on" data-view="tech" data-i18n="proj.viewTech">Vue technique</button>
+              <button class="vt-btn" data-view="exec" data-i18n="proj.viewExec">Vue décideur</button>
+            </div>
+            <div class="view-panel view-tech-panel">
             <div class="ps"><h4><i>01</i><span data-i18n="proj.stepProblem">Problème</span></h4><p data-i18n="proj.p3.problem">Les dossiers et activités administratives de la Direction des Études et de la Planification (Cabinet ZLECAf) étaient suivis de façon fragmentée, sans centralisation ni visibilité d'ensemble.</p></div>
             <div class="ps"><h4><i>02</i><span data-i18n="proj.stepData">Données</span></h4><p data-i18n="proj.p3.data">Dossiers et activités administratives de la direction, liés aux travaux sur la Zone de libre-échange continentale africaine (ZLECAf).</p></div>
             <div class="ps"><h4><i>03</i><span data-i18n="proj.stepMethod">Méthode</span></h4><p data-i18n="proj.p3.method">Conception et développement d'une application web interne : authentification sécurisée, centralisation des dossiers, tableau de bord de suivi.</p></div>
@@ -900,6 +953,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
             <div class="ps"><h4><i>06</i><span data-i18n="proj.stepResult">Résultat</span></h4><p data-i18n="proj.p3.result">Application déployée et utilisée en conditions réelles au sein du Cabinet.</p></div>
             <div class="links">
               <a class="link-s" href="https://suivi-dossier.onrender.com" target="_blank" rel="noopener" data-i18n="proj.p3.link">Voir la démonstration ↗</a>
+            </div>
+            </div>
+            <div class="view-panel view-exec-panel" hidden>
+              <p data-i18n="proj.p3.exec">Avant, les dossiers administratifs du Cabinet ZLECAf circulaient de façon dispersée, sans vue d'ensemble. Cette application centralise tout en un seul endroit sécurisé : la direction sait à tout moment où en est chaque dossier.</p>
             </div>
           </div>
           <div class="mock">
@@ -925,6 +982,11 @@ footer{border-top:1px solid var(--line);padding-block:38px}
         <div class="case-body" id="p4"><div class="case-inner"><div class="case-grid">
           <div>
             <span class="case-cat" data-i18n="proj.p4.cat">Solutions Digitales · Développement Web</span>
+            <div class="view-toggle" role="tablist">
+              <button class="vt-btn on" data-view="tech" data-i18n="proj.viewTech">Vue technique</button>
+              <button class="vt-btn" data-view="exec" data-i18n="proj.viewExec">Vue décideur</button>
+            </div>
+            <div class="view-panel view-tech-panel">
             <div class="ps"><h4><i>01</i><span data-i18n="proj.stepProblem">Problème</span></h4><p data-i18n="proj.p4.problem">L'entreprise avait besoin d'un site web professionnel reflétant fidèlement ses activités et son identité de marque, à partir de ses documents officiels.</p></div>
             <div class="ps"><h4><i>02</i><span data-i18n="proj.stepContent">Contenu</span></h4><p data-i18n="proj.p4.data">Documents officiels de l'entreprise : présentation, offres, logo et charte graphique.</p></div>
             <div class="ps"><h4><i>03</i><span data-i18n="proj.stepMethod">Méthode</span></h4><p data-i18n="proj.p4.method">Refonte complète en 5 pages (Accueil, À propos, Activités, Offres, Contact), identité visuelle bleu marine/or dérivée du logo, formulaire de contact fonctionnel, SEO technique et vérification responsive complète.</p></div>
@@ -935,6 +997,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
             <div class="ps"><h4><i>06</i><span data-i18n="proj.stepResult">Résultat</span></h4><p data-i18n="proj.p4.result">Site en production, structuré autour des quatre activités de l'entreprise.</p></div>
             <div class="links">
               <a class="link-s" href="https://mara-business.com" target="_blank" rel="noopener" data-i18n="proj.p4.link">Voir le site ↗</a>
+            </div>
+            </div>
+            <div class="view-panel view-exec-panel" hidden>
+              <p data-i18n="proj.p4.exec">Une entreprise avec quatre activités mais pas de vitrine en ligne à la hauteur. Ce site présente clairement son offre, inspire confiance et permet aux clients de la contacter directement, en ligne, à toute heure.</p>
             </div>
           </div>
           <div class="mock">
@@ -1068,17 +1134,28 @@ footer{border-top:1px solid var(--line);padding-block:38px}
       <div class="eyebrow mono" data-i18n="africa.eyebrow">07 — Vision</div>
       <h2 class="h-sec">Data for Africa</h2>
     </div>
-    <div class="afr-grid">
-      <div class="rv">
-        <p class="quote" data-i18n="africa.quote">L'Afrique possède une immense richesse de données. L'enjeu est de transformer ces données en intelligence, en innovation et en décisions utiles.</p>
-        <p class="lead" data-i18n="africa.lead">Les données produites chaque jour par les administrations, les entreprises et les services publics restent souvent inexploitées, faute d'outils et de compétences locales pour les valoriser. C'est précisément le travail que je veux faire : rendre ces données lisibles, fiables et actionnables, là où elles sont produites.</p>
-        <div class="domains" style="margin-top:26px">
-          <span data-i18n="africa.d1">Santé</span><span data-i18n="africa.d2">Commerce</span><span data-i18n="africa.d3">Administration</span><span data-i18n="africa.d4">Agriculture</span>
-          <span data-i18n="africa.d5">Finances</span><span data-i18n="africa.d6">Industrie</span><span data-i18n="africa.d7">Planification</span><span data-i18n="africa.d8">Transformation numérique</span>
+    <div class="afr-panel">
+      <div class="afr-grid">
+        <div class="rv">
+          <p class="quote" data-i18n="africa.quote">L'Afrique possède une immense richesse de données. L'enjeu est de transformer ces données en intelligence, en innovation et en décisions utiles.</p>
+          <p class="lead" data-i18n="africa.lead">Les données produites chaque jour par les administrations, les entreprises et les services publics restent souvent inexploitées, faute d'outils et de compétences locales pour les valoriser. C'est précisément le travail que je veux faire : rendre ces données lisibles, fiables et actionnables, là où elles sont produites.</p>
+          <div class="domains" style="margin-top:26px">
+            <span data-i18n="africa.d1">Santé</span><span data-i18n="africa.d2">Commerce</span><span data-i18n="africa.d3">Administration</span><span data-i18n="africa.d4">Agriculture</span>
+            <span data-i18n="africa.d5">Finances</span><span data-i18n="africa.d6">Industrie</span><span data-i18n="africa.d7">Planification</span><span data-i18n="africa.d8">Transformation numérique</span>
+          </div>
         </div>
-      </div>
-      <div class="rv" data-d="2">
-        <svg id="afrmap" viewBox="0 0 300 340" aria-label="Représentation abstraite d'un réseau de données"></svg>
+        <div class="rv afr-motif" data-d="2" aria-hidden="true">
+          <svg viewBox="0 0 220 260" class="motif-svg">
+            <g class="motif-outline">
+              <path d="M30 20 L50 40 L30 60 L10 40 Z"/><path d="M80 20 L100 40 L80 60 L60 40 Z"/><path d="M130 20 L150 40 L130 60 L110 40 Z"/><path d="M180 20 L200 40 L180 60 L160 40 Z"/>
+              <path d="M30 75 L50 95 L30 115 L10 95 Z"/><path d="M180 75 L200 95 L180 115 L160 95 Z"/>
+              <path d="M30 130 L50 150 L30 170 L10 150 Z"/><path d="M180 130 L200 150 L180 170 L160 150 Z"/>
+              <path d="M30 185 L50 205 L30 225 L10 205 Z"/><path d="M80 185 L100 205 L80 225 L60 205 Z"/><path d="M130 185 L150 205 L130 225 L110 205 Z"/><path d="M180 185 L200 205 L180 225 L160 205 Z"/>
+            </g>
+            <path d="M60 80 L160 80 L160 180 L60 180 Z" class="motif-primary"/>
+            <path d="M85 105 L135 105 L135 155 L85 155 Z" class="motif-amber"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -1194,11 +1271,13 @@ document.getElementById("theme").addEventListener("click", function(){
   var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", next);
   try { window.localStorage.setItem("pn-theme", next); } catch(e){}
+  updateThemeBtnLabel();
 });
 
 /* ---------- LANGUE (FR / EN) ---------- */
 var I18N = {
 fr:{
+"nav.toLight":"Mode clair","nav.toDark":"Mode sombre",
 "lbl.profil":"Profil","lbl.arsenal":"Expertise","lbl.projets":"Projets","lbl.approche":"Approche",
 "lbl.parcours":"Parcours","lbl.contact":"Contact","lbl.certifications":"Certifications",
 "lbl.afrique":"Data for Africa","lbl.afrique2":"Afrique","lbl.services":"Services","lbl.accueil":"Accueil",
@@ -1212,7 +1291,7 @@ fr:{
 "hero.photoAvail":"Disponible pour de nouvelles opportunités",
 "hero.trustLbl":"Institutions &amp; organisations",
 "hero.trust1":"Ministère du Commerce — Cabinet ZLECAf","hero.trust2":"Ministère des Hydrocarbures","hero.trust3":"ACPCE",
-"hero.scroll":"Défiler",
+"hero.scroll":"Défiler","hero.vizData":"DONNÉES","hero.vizDecision":"DÉCISION",
 
 "profil.eyebrow":"01 — Profil","profil.h2":"Qui est Princia&nbsp;?",
 "profil.lead":"Je travaille sur toute la chaîne de la donnée : de la collecte brute jusqu'à la décision. Ce qui m'intéresse n'est pas la technique pour elle-même, mais ce qu'une organisation peut réellement faire de ses données une fois qu'elles sont propres, comprises et bien présentées.",
@@ -1247,6 +1326,7 @@ fr:{
 "proj.lead":"Quatre projets réels. Cliquez pour voir le problème, la méthode, les technologies et le résultat de chacun.",
 "proj.stepProblem":"Problème","proj.stepData":"Données","proj.stepMethod":"Méthode","proj.stepTech":"Technologies",
 "proj.stepSolution":"Solution","proj.stepResult":"Résultat","proj.stepContent":"Contenu",
+"proj.viewTech":"Vue technique","proj.viewExec":"Vue décideur",
 
 "proj.p1.head":"MED-AI DOC<span class=\"pill-award\">🏆 Hackathon MISSIO 2026</span>\n            <small>Plateforme d'analyse documentaire médicale assistée par IA, avec validation humaine obligatoire.</small>",
 "proj.p1.cat":"Intelligence Artificielle · Santé",
@@ -1256,6 +1336,7 @@ fr:{
 "proj.p1.solution":"Plateforme complète avec contrôle d'accès par rôle (RBAC), workflow de validation humaine, journal d'audit, assistant IA conversationnel sur un dossier, recherche et génération de rapports PDF.",
 "proj.p1.result":"15 phases livrées de bout en bout (architecture → déploiement), projet conçu et développé en solo pour le Hackathon MISSIO 2026 — « Réinventer la santé avec l'IA ».",
 "proj.p1.note":"Code source privé — projet de hackathon, disponible sur demande.",
+"proj.p1.exec":"Les équipes de santé perdent un temps précieux à retrouver l'information dans des dossiers papier ou scannés. Cette plateforme lit les documents à leur place, fait vérifier chaque information par un humain avant de la valider, et restitue tout dans un tableau de bord clair. Résultat : moins de temps perdu, plus de temps pour les patients.",
 "proj.p1.mockCap":"Pipeline",
 "proj.p1.mock":"\n              <div><b>1. Import</b> — dépôt de documents (PDF, image)</div>\n              <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>\n              <div><b>3. Extraction IA</b> — Claude / Gemini</div>\n              <div><b>4. Validation humaine</b> — obligatoire avant fiabilisation</div>\n              <div><b>5. Restitution</b> — dashboard, rapports, assistant IA</div>\n            ",
 
@@ -1266,7 +1347,8 @@ fr:{
 "proj.p2.method":"Transfer learning sur l'architecture VGG16 : préparation des images, augmentation de données, entraînement et évaluation du modèle.",
 "proj.p2.solution":"Modèle de classification d'images entraîné et évalué sur un jeu de test dédié.",
 "proj.p2.result":"Accuracy 97,66&nbsp;%, precision 98,28&nbsp;%, recall 96,61&nbsp;%, F1-score 97,44&nbsp;%. Projet lauréat du <strong>Prix de l'innovation « Denis Sassou Nguesso »</strong>.",
-"proj.p2.mockCap":"Performances du modèle",
+"proj.p2.exec":"Un modèle d'intelligence artificielle capable de repérer les signes du cancer du sein sur une image infrarouge avec 97,66&nbsp;% de fiabilité — un outil de dépistage précoce, rapide et peu coûteux, récompensé par le Prix national de l'innovation « Denis Sassou Nguesso ».",
+"proj.p2.mockCap":"Performances du modèle","proj.p2.resScale":"Résultats (échelle 0 à 100 %)",
 
 "proj.p3.head":"Suivi des dossiers — Cabinet ZLECAf\n            <small>Application interne de centralisation et suivi des dossiers administratifs, Ministère du Commerce.</small>",
 "proj.p3.cat":"Solutions Digitales · Secteur Public",
@@ -1276,6 +1358,7 @@ fr:{
 "proj.p3.solution":"Plateforme interne permettant à la direction de centraliser, suivre et piloter ses dossiers administratifs depuis un accès sécurisé.",
 "proj.p3.result":"Application déployée et utilisée en conditions réelles au sein du Cabinet.",
 "proj.p3.link":"Voir la démonstration ↗","proj.p3.mockCap":"Fonctionnement",
+"proj.p3.exec":"Avant, les dossiers administratifs du Cabinet ZLECAf circulaient de façon dispersée, sans vue d'ensemble. Cette application centralise tout en un seul endroit sécurisé : la direction sait à tout moment où en est chaque dossier.",
 "proj.p3.mock":"\n              <div><em>1</em><p>Authentification sécurisée des agents</p></div>\n              <div><em>2</em><p>Centralisation des dossiers administratifs</p></div>\n              <div><em>3</em><p>Suivi de l'avancement de chaque dossier</p></div>\n              <div><em>4</em><p>Tableau de bord d'activité de la direction</p></div>\n            ",
 
 "proj.p4.head":"Mara Business — Site institutionnel\n            <small>Refonte complète d'un site web d'entreprise, conçu et développé de bout en bout.</small>",
@@ -1287,6 +1370,7 @@ fr:{
 "proj.p4.solution":"Site institutionnel complet, avec formulaire de contact par e-mail, sitemap, robots.txt et données structurées Schema.org.",
 "proj.p4.result":"Site en production, structuré autour des quatre activités de l'entreprise.",
 "proj.p4.link":"Voir le site ↗","proj.p4.mockCap":"Activités couvertes",
+"proj.p4.exec":"Une entreprise avec quatre activités mais pas de vitrine en ligne à la hauteur. Ce site présente clairement son offre, inspire confiance et permet aux clients de la contacter directement, en ligne, à toute heure.",
 "proj.p4.mock":"\n              <div><span>Domaine 1</span><b>Fournitures de bureau</b></div>\n              <div><span>Domaine 2</span><b>Livraison à domicile</b></div>\n              <div><span>Domaine 3</span><b>Immobilier &amp; construction</b></div>\n              <div><span>Domaine 4</span><b>Location de véhicules</b></div>\n            ",
 
 "meth.eyebrow":"04 — Méthode","meth.h2":"De la donnée à la décision",
@@ -1350,6 +1434,7 @@ fr:{
 "foot.rights":"© 2026 Princia Ngakosso — Tous droits réservés.","foot.top":"Retour en haut ↑"
 },
 en:{
+"nav.toLight":"Light mode","nav.toDark":"Dark mode",
 "lbl.profil":"Profile","lbl.arsenal":"Expertise","lbl.projets":"Projects","lbl.approche":"Approach",
 "lbl.parcours":"Experience","lbl.contact":"Contact","lbl.certifications":"Certifications",
 "lbl.afrique":"Data for Africa","lbl.afrique2":"Africa","lbl.services":"Services","lbl.accueil":"Home",
@@ -1363,7 +1448,7 @@ en:{
 "hero.photoAvail":"Available for new opportunities",
 "hero.trustLbl":"Institutions &amp; organisations",
 "hero.trust1":"Ministry of Commerce — AfCFTA Cabinet","hero.trust2":"Ministry of Hydrocarbons","hero.trust3":"ACPCE (Business Creation Agency)",
-"hero.scroll":"Scroll",
+"hero.scroll":"Scroll","hero.vizData":"DATA","hero.vizDecision":"DECISION",
 
 "profil.eyebrow":"01 — Profile","profil.h2":"Who is Princia&nbsp;?",
 "profil.lead":"I work across the entire data chain: from raw collection to decision. What interests me isn't technique for its own sake, but what an organisation can actually do with its data once it's clean, understood and well presented.",
@@ -1398,6 +1483,7 @@ en:{
 "proj.lead":"Four real projects. Click to see the problem, method, technologies and result for each.",
 "proj.stepProblem":"Problem","proj.stepData":"Data","proj.stepMethod":"Method","proj.stepTech":"Technology",
 "proj.stepSolution":"Solution","proj.stepResult":"Result","proj.stepContent":"Content",
+"proj.viewTech":"Technical view","proj.viewExec":"Decision-maker view",
 
 "proj.p1.head":"MED-AI DOC<span class=\"pill-award\">🏆 MISSIO Hackathon 2026</span>\n            <small>AI-assisted medical document analysis platform, with mandatory human validation.</small>",
 "proj.p1.cat":"Artificial Intelligence · Healthcare",
@@ -1407,6 +1493,7 @@ en:{
 "proj.p1.solution":"Full platform with role-based access control (RBAC), human validation workflow, audit log, conversational AI assistant on a case file, search and PDF report generation.",
 "proj.p1.result":"15 phases delivered end to end (architecture → deployment), designed and built solo for the MISSIO 2026 Hackathon — \"Reinventing healthcare with AI\".",
 "proj.p1.note":"Private source code — hackathon project, available on request.",
+"proj.p1.exec":"Healthcare teams lose precious time hunting for information in paper or scanned files. This platform reads the documents for them, has every piece of information checked by a human before it's trusted, and puts it all in a clear dashboard. The result: less time lost, more time for patients.",
 "proj.p1.mockCap":"Pipeline",
 "proj.p1.mock":"\n              <div><b>1. Import</b> — document upload (PDF, image)</div>\n              <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>\n              <div><b>3. AI extraction</b> — Claude / Gemini</div>\n              <div><b>4. Human validation</b> — mandatory before data is trusted</div>\n              <div><b>5. Output</b> — dashboard, reports, AI assistant</div>\n            ",
 
@@ -1417,7 +1504,8 @@ en:{
 "proj.p2.method":"Transfer learning on the VGG16 architecture: image preparation, data augmentation, model training and evaluation.",
 "proj.p2.solution":"Image classification model trained and evaluated on a dedicated test set.",
 "proj.p2.result":"Accuracy 97.66&nbsp;%, precision 98.28&nbsp;%, recall 96.61&nbsp;%, F1-score 97.44&nbsp;%. Winner of the <strong>\"Denis Sassou Nguesso\" Innovation Award</strong>.",
-"proj.p2.mockCap":"Model performance",
+"proj.p2.exec":"An AI model able to spot signs of breast cancer on an infrared image with 97.66&nbsp;% reliability — a fast, affordable early-screening tool, winner of the \"Denis Sassou Nguesso\" National Innovation Award.",
+"proj.p2.mockCap":"Model performance","proj.p2.resScale":"Results (0 to 100% scale)",
 
 "proj.p3.head":"Case Tracking System — AfCFTA Cabinet\n            <small>Internal application to centralise and track administrative case files, Ministry of Commerce.</small>",
 "proj.p3.cat":"Digital Solutions · Public Sector",
@@ -1427,6 +1515,7 @@ en:{
 "proj.p3.solution":"Internal platform allowing the directorate to centralise, track and manage its administrative files through secure access.",
 "proj.p3.result":"Application deployed and used in real conditions within the Cabinet.",
 "proj.p3.link":"View demo ↗","proj.p3.mockCap":"How it works",
+"proj.p3.exec":"Administrative files at the AfCFTA Cabinet used to circulate in a scattered way, with no overall view. This application centralises everything in one secure place: the directorate always knows exactly where each file stands.",
 "proj.p3.mock":"\n              <div><em>1</em><p>Secure authentication for staff</p></div>\n              <div><em>2</em><p>Centralisation of administrative case files</p></div>\n              <div><em>3</em><p>Progress tracking for each case</p></div>\n              <div><em>4</em><p>Directorate activity dashboard</p></div>\n            ",
 
 "proj.p4.head":"Mara Business — Corporate Website\n            <small>Full redesign of a company website, designed and built end to end.</small>",
@@ -1438,6 +1527,7 @@ en:{
 "proj.p4.solution":"Complete corporate website, with an email contact form, sitemap, robots.txt and Schema.org structured data.",
 "proj.p4.result":"Live website, structured around the company's four business lines.",
 "proj.p4.link":"View website ↗","proj.p4.mockCap":"Business lines covered",
+"proj.p4.exec":"A company with four business lines but no online presence to match. This website clearly presents its offering, builds trust, and lets customers reach out directly, online, any time.",
 "proj.p4.mock":"\n              <div><span>Line 1</span><b>Office supplies</b></div>\n              <div><span>Line 2</span><b>Home delivery</b></div>\n              <div><span>Line 3</span><b>Real estate &amp; construction</b></div>\n              <div><span>Line 4</span><b>Vehicle rental</b></div>\n            ",
 
 "meth.eyebrow":"04 — Method","meth.h2":"From data to decision",
@@ -1514,6 +1604,13 @@ function applyLang(lang){
   root.setAttribute("lang", lang);
   document.getElementById("langBtn").textContent = lang === "fr" ? "EN" : "FR";
   if (typeof renderChain === "function" && typeof chainIdx === "number") renderChain(chainIdx);
+  updateThemeBtnLabel();
+}
+
+function updateThemeBtnLabel(){
+  var d = I18N[curLang] || I18N.fr;
+  var isDark = root.getAttribute("data-theme") === "dark";
+  document.getElementById("theme").textContent = isDark ? d["nav.toLight"] : d["nav.toDark"];
 }
 
 var langBtn = document.getElementById("langBtn");
@@ -1584,21 +1681,18 @@ if ("IntersectionObserver" in window && !reduce){
   Array.prototype.forEach.call(revs, function(el){ el.classList.add("in"); });
 }
 
-/* ---------- JAUGES DE PERFORMANCE ---------- */
-var gauges = document.querySelectorAll(".gauge .fgc");
-function fillGauges(){
-  Array.prototype.forEach.call(gauges, function(c){
-    var v = parseFloat(c.getAttribute("data-val")) || 0;
-    c.style.strokeDashoffset = String(264 - (264 * v / 100));
-  });
+/* ---------- BARRES DE PERFORMANCE ---------- */
+var barTracks = document.querySelectorAll(".bm-track");
+function fillBars(){
+  Array.prototype.forEach.call(barTracks, function(t){ t.classList.add("in"); });
 }
 if ("IntersectionObserver" in window){
-  var gObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){ if (en.isIntersecting){ fillGauges(); gObs.disconnect(); } });
+  var bObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ fillBars(); bObs.disconnect(); } });
   }, {threshold:.2});
-  var g0 = document.querySelector(".gauges");
-  if (g0) gObs.observe(g0);
-} else { fillGauges(); }
+  var bm0 = document.querySelector(".barmetrics");
+  if (bm0) bObs.observe(bm0);
+} else { fillBars(); }
 
 /* ---------- CHAÎNE DE TRAITEMENT ---------- */
 var CHAIN_BY_LANG = {
@@ -1661,203 +1755,22 @@ Array.prototype.forEach.call(document.querySelectorAll(".case-h"), function(btn)
   });
 });
 
-/* ---------- CONSOLE : CODE + SPARKLINE ---------- */
-var LINES = [
-  '<span class="k">import</span> pandas <span class="k">as</span> pd',
-  'df = pd.read_csv(<span class="s">"donnees_brutes.csv"</span>)',
-  'df = df.dropna().drop_duplicates()',
-  'kpi = df.groupby(<span class="s">"region"</span>).agg(<span class="s">"sum"</span>)',
-  '<span class="o">&gt;&gt;&gt; dashboard prêt — 6 indicateurs</span>'
-];
-var codeEl = document.getElementById("code"), spark = document.getElementById("spark");
-var HEIGHTS = [34, 58, 46, 72, 90, 61, 78, 44];
-function fillSpark(){
-  Array.prototype.forEach.call(spark.children, function(b, i){
-    window.setTimeout(function(){ b.style.height = HEIGHTS[i] + "%"; }, i * 90);
+/* ---------- VUE TECHNIQUE / VUE DÉCIDEUR ---------- */
+Array.prototype.forEach.call(document.querySelectorAll(".view-toggle"), function(tg){
+  var wrap = tg.parentNode;
+  var techPanel = wrap.querySelector(".view-tech-panel");
+  var execPanel = wrap.querySelector(".view-exec-panel");
+  Array.prototype.forEach.call(tg.querySelectorAll(".vt-btn"), function(b){
+    b.addEventListener("click", function(){
+      var view = b.getAttribute("data-view");
+      Array.prototype.forEach.call(tg.querySelectorAll(".vt-btn"), function(x){ x.classList.toggle("on", x === b); });
+      techPanel.hidden = view !== "tech";
+      execPanel.hidden = view !== "exec";
+    });
   });
-}
-if (reduce){
-  codeEl.innerHTML = LINES.join("\n");
-  fillSpark();
-} else {
-  var li = 0, ci = 0, done = "";
-  (function type(){
-    if (li >= LINES.length){ codeEl.innerHTML = done; fillSpark(); return; }
-    var raw = LINES[li];
-    // on avance caractère par caractère en sautant les balises HTML
-    if (ci < raw.length && raw.charAt(ci) === "<"){ ci = raw.indexOf(">", ci) + 1; }
-    ci++;
-    codeEl.innerHTML = done + raw.slice(0, ci) + '<span class="caret"></span>';
-    if (ci >= raw.length){ done += raw + "\n"; li++; ci = 0; window.setTimeout(type, 320); }
-    else { window.setTimeout(type, 22); }
-  })();
-}
-
-/* ---------- HERO : FLUX DE DONNÉES ---------- */
-var cv = document.getElementById("flow"), ctx = cv.getContext("2d");
-var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
-var N = window.innerWidth < 700 ? 46 : 84;
-var pts = [], phase = 0, t = 0, raf = null;
-var canHover = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
-var mouse = {x:-9999, y:-9999, active:false};
-if (canHover && !reduce){
-  cv.addEventListener("mousemove", function(e){
-    var r = cv.getBoundingClientRect();
-    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.active = true;
-  });
-  cv.addEventListener("mouseleave", function(){ mouse.active = false; });
-}
-
-function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-
-function resize(){
-  W = cv.clientWidth; H = cv.clientHeight;
-  cv.width = W * DPR; cv.height = H * DPR;
-  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-  layout();
-}
-function layout(){
-  var bars = 9, m = Math.min(W * .46, 460), ox = W * .06, oy = H * .72;
-  for (var i = 0; i < pts.length; i++){
-    var p = pts[i];
-    // formation 0 : nuage
-    p.t0 = {x: Math.random() * W, y: Math.random() * H};
-    // formation 1 : histogramme
-    var b = i % bars, hgt = (0.18 + ((b * 37 % 11) / 11) * .62) * H * .42;
-    p.t1 = {x: ox + (b + .5) * (m / bars), y: oy - Math.random() * hgt};
-    // formation 2 : courbe
-    var u = i / pts.length;
-    p.t2 = {x: ox + u * m, y: oy - (Math.sin(u * Math.PI * 1.6) * .5 + .5) * H * .34};
-  }
-}
-function init(){
-  pts = [];
-  for (var i = 0; i < N; i++){
-    pts.push({x: Math.random() * W, y: Math.random() * H, vx:0, vy:0,
-              c: i % 13 === 0 ? "amber" : (i % 17 === 0 ? "violet" : "prim")});
-  }
-  layout();
-}
-function tick(){
-  t++;
-  if (t % 300 === 0) phase = (phase + 1) % 3;
-  var pr = css("--primary") || "#B5543A", am = css("--amber") || "#A8752E", vi = css("--violet") || "#6E4A37";
-  ctx.clearRect(0, 0, W, H);
-
-  for (var i = 0; i < pts.length; i++){
-    var p = pts[i], tg = phase === 0 ? p.t0 : (phase === 1 ? p.t1 : p.t2);
-    p.vx += (tg.x - p.x) * .0022; p.vy += (tg.y - p.y) * .0022;
-    if (mouse.active){
-      var mdx = p.x - mouse.x, mdy = p.y - mouse.y, md2 = mdx*mdx + mdy*mdy, R = 120*120;
-      if (md2 < R && md2 > 4){
-        var f = (1 - md2/R) * .8, d = Math.sqrt(md2);
-        p.vx += (mdx/d) * f; p.vy += (mdy/d) * f;
-      }
-    }
-    p.vx *= .93; p.vy *= .93;
-    p.x += p.vx; p.y += p.vy;
-  }
-  if (phase === 0){
-    ctx.lineWidth = .6;
-    for (var a = 0; a < pts.length; a++){
-      for (var b2 = a + 1; b2 < pts.length; b2++){
-        var dx = pts[a].x - pts[b2].x, dy = pts[a].y - pts[b2].y, d = dx*dx + dy*dy;
-        if (d < 15000){
-          ctx.globalAlpha = (1 - d / 15000) * .14;
-          ctx.strokeStyle = pr;
-          ctx.beginPath(); ctx.moveTo(pts[a].x, pts[a].y); ctx.lineTo(pts[b2].x, pts[b2].y); ctx.stroke();
-        }
-      }
-    }
-  }
-  for (var j = 0; j < pts.length; j++){
-    var q = pts[j];
-    ctx.globalAlpha = q.c === "prim" ? .5 : .85;
-    ctx.fillStyle = q.c === "amber" ? am : (q.c === "violet" ? vi : pr);
-    ctx.beginPath(); ctx.arc(q.x, q.y, q.c === "prim" ? 1.7 : 2.4, 0, 6.2832); ctx.fill();
-  }
-  ctx.globalAlpha = 1;
-  raf = window.requestAnimationFrame(tick);
-}
-function boot(){
-  resize(); init();
-  if (reduce){ phase = 2; tickOnce(); return; }
-  if (raf) window.cancelAnimationFrame(raf);
-  tick();
-}
-function tickOnce(){
-  var pr = css("--primary") || "#B5543A";
-  ctx.clearRect(0,0,W,H);
-  for (var i = 0; i < pts.length; i++){
-    var p = pts[i];
-    ctx.globalAlpha = .45; ctx.fillStyle = pr;
-    ctx.beginPath(); ctx.arc(p.t2.x, p.t2.y, 2, 0, 6.2832); ctx.fill();
-  }
-  ctx.globalAlpha = 1;
-}
-boot();
-var rt = null;
-window.addEventListener("resize", function(){
-  window.clearTimeout(rt);
-  rt = window.setTimeout(function(){ N = window.innerWidth < 700 ? 46 : 84; boot(); }, 220);
 });
-// pause hors écran (performance)
-if ("IntersectionObserver" in window && !reduce){
-  new IntersectionObserver(function(en){
-    if (en[0].isIntersecting){ if (!raf) tick(); }
-    else if (raf){ window.cancelAnimationFrame(raf); raf = null; }
-  }, {threshold:.02}).observe(cv);
-}
 
-/* ---------- RÉSEAU DE DONNÉES (abstrait, sans forme géographique) ---------- */
-var svg = document.getElementById("afrmap");
-if (svg){
-  var NS = "http://www.w3.org/2000/svg";
-  // PRNG déterministe (mulberry32) pour un motif stable et reproductible
-  function mulberry32(seed){
-    return function(){
-      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
-      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
-  var rnd = mulberry32(2026);
-  // Composition en diagonale : flux de données montant, sans intention cartographique
-  var nodes = [], bands = 14;
-  for (var bi = 0; bi < bands; bi++){
-    var count = 3 + Math.floor(rnd() * 3);
-    var by = 24 + bi * (296 / bands);
-    var bx = 30 + bi * (8 + rnd() * 6);
-    for (var ci = 0; ci < count; ci++){
-      nodes.push({
-        x: bx + ci * (26 + rnd() * 30) + (rnd() - .5) * 18,
-        y: by + (rnd() - .5) * 22,
-        hi: rnd() < 0.16
-      });
-    }
-  }
-  var frag = document.createDocumentFragment();
-  for (var i = 0; i < nodes.length; i++){
-    for (var j = i + 1; j < nodes.length; j++){
-      var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-      if (dx*dx + dy*dy < 1100){
-        var ln = document.createElementNS(NS, "line");
-        ln.setAttribute("x1", nodes[i].x); ln.setAttribute("y1", nodes[i].y);
-        ln.setAttribute("x2", nodes[j].x); ln.setAttribute("y2", nodes[j].y);
-        frag.appendChild(ln);
-      }
-    }
-  }
-  nodes.forEach(function(n){
-    var c = document.createElementNS(NS, "circle");
-    c.setAttribute("cx", n.x); c.setAttribute("cy", n.y);
-    c.setAttribute("r", n.hi ? 3.4 : 2.1);
-    if (n.hi) c.setAttribute("class", "hi");
-    frag.appendChild(c);
-  });
-  svg.appendChild(frag);
-}
+
 
 /* ---------- COMPTEUR DES CHIFFRES CLÉS ---------- */
 if (!reduce){
