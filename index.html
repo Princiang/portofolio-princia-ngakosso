@@ -879,14 +879,20 @@ footer{border-top:1px solid var(--line);padding-block:38px}
               <p data-i18n="proj.p1.exec">Les équipes de santé perdent un temps précieux à retrouver l'information dans des dossiers papier ou scannés. Cette plateforme lit les documents à leur place, fait vérifier chaque information par un humain avant de la valider, et restitue tout dans un tableau de bord clair. Résultat : moins de temps perdu, plus de temps pour les patients.</p>
             </div>
           </div>
-          <div class="mock">
-            <span class="mock-cap" data-i18n="proj.p1.mockCap">Pipeline</span>
-            <div class="arch" data-i18n="proj.p1.mock">
-              <div><b>1. Import</b> — dépôt de documents (PDF, image)</div>
-              <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>
-              <div><b>3. Extraction IA</b> — Claude / Gemini</div>
-              <div><b>4. Validation humaine</b> — obligatoire avant fiabilisation</div>
-              <div><b>5. Restitution</b> — dashboard, rapports, assistant IA</div>
+          <div>
+            <div class="browser-mock">
+              <div class="browser-bar"><i></i><i></i><i></i><span data-i18n="proj.p1.shotCap">Environnement de démonstration</span></div>
+              <img src="screenshot-med-ai-doc.png" alt="Tableau de bord de l'application MED-AI DOC, compte médecin de démonstration" loading="lazy">
+            </div>
+            <div class="mock" style="margin-top:14px">
+              <span class="mock-cap" data-i18n="proj.p1.mockCap">Pipeline</span>
+              <div class="arch" data-i18n="proj.p1.mock">
+                <div><b>1. Import</b> — dépôt de documents (PDF, image)</div>
+                <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>
+                <div><b>3. Extraction IA</b> — Claude / Gemini</div>
+                <div><b>4. Validation humaine</b> — obligatoire avant fiabilisation</div>
+                <div><b>5. Restitution</b> — dashboard, rapports, assistant IA</div>
+              </div>
             </div>
           </div>
         </div></div></div>
@@ -1355,7 +1361,7 @@ fr:{
 "proj.p1.result":"15 phases livrées de bout en bout (architecture → déploiement), projet conçu et développé en solo pour le Hackathon MISSIO 2026 — « Réinventer la santé avec l'IA ».",
 "proj.p1.note":"Code source privé — projet de hackathon, disponible sur demande.",
 "proj.p1.exec":"Les équipes de santé perdent un temps précieux à retrouver l'information dans des dossiers papier ou scannés. Cette plateforme lit les documents à leur place, fait vérifier chaque information par un humain avant de la valider, et restitue tout dans un tableau de bord clair. Résultat : moins de temps perdu, plus de temps pour les patients.",
-"proj.p1.mockCap":"Pipeline",
+"proj.p1.mockCap":"Pipeline","proj.p1.shotCap":"Environnement de démonstration",
 "proj.p1.mock":"\n              <div><b>1. Import</b> — dépôt de documents (PDF, image)</div>\n              <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>\n              <div><b>3. Extraction IA</b> — Claude / Gemini</div>\n              <div><b>4. Validation humaine</b> — obligatoire avant fiabilisation</div>\n              <div><b>5. Restitution</b> — dashboard, rapports, assistant IA</div>\n            ",
 
 "proj.p2.head":"Détection du cancer du sein par IA<span class=\"pill-award\">🏆 Prix national d'innovation</span>\n            <small>Classification d'images infrarouges par réseau de neurones convolutif et transfer learning.</small>",
@@ -1512,7 +1518,7 @@ en:{
 "proj.p1.result":"15 phases delivered end to end (architecture → deployment), designed and built solo for the MISSIO 2026 Hackathon — \"Reinventing healthcare with AI\".",
 "proj.p1.note":"Private source code — hackathon project, available on request.",
 "proj.p1.exec":"Healthcare teams lose precious time hunting for information in paper or scanned files. This platform reads the documents for them, has every piece of information checked by a human before it's trusted, and puts it all in a clear dashboard. The result: less time lost, more time for patients.",
-"proj.p1.mockCap":"Pipeline",
+"proj.p1.mockCap":"Pipeline","proj.p1.shotCap":"Demo environment",
 "proj.p1.mock":"\n              <div><b>1. Import</b> — document upload (PDF, image)</div>\n              <div><b>2. OCR</b> — Tesseract &amp; PyMuPDF</div>\n              <div><b>3. AI extraction</b> — Claude / Gemini</div>\n              <div><b>4. Human validation</b> — mandatory before data is trusted</div>\n              <div><b>5. Output</b> — dashboard, reports, AI assistant</div>\n            ",
 
 "proj.p2.head":"AI-based breast cancer detection<span class=\"pill-award\">🏆 National Innovation Award</span>\n            <small>Infrared image classification using a convolutional neural network and transfer learning.</small>",
