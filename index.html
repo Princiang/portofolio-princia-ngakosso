@@ -463,6 +463,12 @@ html[data-theme="dark"] .hero-name .l2{-webkit-text-stroke-width:1px}
 /* Visuels de projets */
 .mock{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:22px;min-height:100%;transition:transform var(--dur-3) var(--ease-out),box-shadow var(--dur-3) var(--ease-out)}
 .mock:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.browser-mock{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--panel);box-shadow:var(--shadow);transition:transform var(--dur-3) var(--ease-out)}
+.browser-mock:hover{transform:translateY(-3px)}
+.browser-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--line-strong);flex:none}
+.browser-bar span{margin-left:10px;font-family:var(--f-mono);font-size:.62rem;color:var(--muted);letter-spacing:.03em}
+.browser-mock img{width:100%;display:block}
 .mock-cap{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;display:block}
 .barmetrics{display:flex;flex-direction:column;gap:16px}
 .bm-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;font-family:var(--f-mono);font-size:.72rem}
@@ -959,13 +965,19 @@ footer{border-top:1px solid var(--line);padding-block:38px}
               <p data-i18n="proj.p3.exec">Avant, les dossiers administratifs du Cabinet ZLECAf circulaient de façon dispersée, sans vue d'ensemble. Cette application centralise tout en un seul endroit sécurisé : la direction sait à tout moment où en est chaque dossier.</p>
             </div>
           </div>
-          <div class="mock">
-            <span class="mock-cap" data-i18n="proj.p3.mockCap">Fonctionnement</span>
-            <div class="flowsteps" data-i18n="proj.p3.mock">
-              <div><em>1</em><p>Authentification sécurisée des agents</p></div>
-              <div><em>2</em><p>Centralisation des dossiers administratifs</p></div>
-              <div><em>3</em><p>Suivi de l'avancement de chaque dossier</p></div>
-              <div><em>4</em><p>Tableau de bord d'activité de la direction</p></div>
+          <div>
+            <div class="browser-mock">
+              <div class="browser-bar"><i></i><i></i><i></i><span>suivi-dossier.onrender.com</span></div>
+              <img src="screenshot-suivi-dossier.png" alt="Tableau de bord de l'application Suivi des dossiers — Cabinet ZLECAf" loading="lazy">
+            </div>
+            <div class="mock" style="margin-top:14px">
+              <span class="mock-cap" data-i18n="proj.p3.mockCap">Fonctionnement</span>
+              <div class="flowsteps" data-i18n="proj.p3.mock">
+                <div><em>1</em><p>Authentification sécurisée des agents</p></div>
+                <div><em>2</em><p>Centralisation des dossiers administratifs</p></div>
+                <div><em>3</em><p>Suivi de l'avancement de chaque dossier</p></div>
+                <div><em>4</em><p>Tableau de bord d'activité de la direction</p></div>
+              </div>
             </div>
           </div>
         </div></div></div>
