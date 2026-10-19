@@ -580,6 +580,19 @@ footer{border-top:1px solid var(--line);padding-block:38px}
 .to-top{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .25s}
 .to-top:hover{color:var(--primary)}
 
+.to-top-fab{
+  position:fixed;right:22px;bottom:22px;z-index:70;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--primary);color:#fff;border:1px solid var(--primary);
+  display:grid;place-items:center;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;
+  transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out),box-shadow var(--dur-2) var(--ease-out);
+}
+.to-top-fab.show{opacity:1;transform:none;pointer-events:auto}
+.to-top-fab:hover{box-shadow:0 14px 34px -12px var(--glow);transform:translateY(-3px)}
+.to-top-fab svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2}
+@media(max-width:600px){.to-top-fab{right:16px;bottom:16px;width:42px;height:42px}}
+
 /* ============================================================
    15. RESPONSIVE
    ============================================================ */
@@ -1281,6 +1294,10 @@ footer{border-top:1px solid var(--line);padding-block:38px}
   </div>
 </footer>
 
+<button class="to-top-fab" id="toTopFab" aria-label="Retour en haut de la page">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
 (function(){
 "use strict";
@@ -1663,7 +1680,14 @@ Array.prototype.forEach.call(sheet.querySelectorAll("a"), function(a){
 /* ---------- NAV + PROGRESSION ---------- */
 var nav = document.getElementById("nav"), bar = document.getElementById("progress"),
     railFill = document.getElementById("railFill"), railItems = document.querySelectorAll(".rail-item"),
-    sections = document.querySelectorAll("[data-sec]"), ticking = false;
+    sections = document.querySelectorAll("[data-sec]"), ticking = false,
+    toTopFab = document.getElementById("toTopFab");
+
+if (toTopFab){
+  toTopFab.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+  });
+}
 
 function onScroll(){
   var y = window.scrollY || window.pageYOffset;
@@ -1672,6 +1696,7 @@ function onScroll(){
   var p = h > 0 ? Math.min(1, y / h) : 0;
   bar.style.width = (p * 100) + "%";
   railFill.style.height = (p * 100) + "%";
+  if (toTopFab) toTopFab.classList.toggle("show", p > .3);
   ticking = false;
 }
 window.addEventListener("scroll", function(){
